@@ -1,0 +1,448 @@
+html{
+    scroll-behavior: smooth;
+}
+body{
+    height: 50vh;
+    font-family: arial;
+    margin: 0;
+    position: relative;
+    background-color: rgb(23, 23, 23);
+}
+button{
+    cursor: pointer;
+}
+.wadah-utama{
+    position: relative;
+    background-color: grey;
+    width: 800px;
+    margin: auto;
+}
+.wadah-nav{
+    width: 100%;
+    height: 460px;
+    background-image: url(foto/hero.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    position: relative;  
+    animation: animasi 1s;
+    border-bottom: 1px dashed white;
+}
+@keyframes animasi {
+    0%{
+        transform:scale(0);
+    }
+    100%{
+        transform:scale(1);
+    } 
+}  
+
+
+/*              BAGIAN NAV              */
+nav{
+    position: fixed;
+    width: 800px;
+    z-index: 999;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 50px;
+    background-color: rgba(50, 47, 47, 0.699);
+}
+.pens img{ 
+    height: 30px;
+    filter: brightness(100%);
+    transition: .1s;
+}
+.pens img:hover{
+    filter: brightness(70%);
+}
+.navbar{
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    gap: 10px;
+}
+.navbar li{
+    padding: 5px;
+    list-style: none;
+    position: relative;
+}
+.navbar li::before{
+    content: "";
+    height: 1px;
+    width: 0%;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: .5s linear;
+}
+.navbar li:hover::before{
+    width: 100%;
+}
+@keyframes lebar{
+    0%{
+        width: 0;
+    }
+    50%{
+        width: 50%;
+    }
+    100%{
+        width: 100%;
+    }
+}
+.navbar li a{
+    text-decoration: none;
+    color: white;
+}
+.navbar button{
+    background-color:red;
+    border: 0;
+    color: white;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    padding: 8px;
+    transition: .3s;
+}
+.navbar button:hover{
+    background-color: white;
+    color:black;
+}
+/*             TUTUP NAVBAR             */
+
+
+/*             BAGIAN HEADER            */
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    top: 100px;
+    opacity: 0;
+    animation: down 2s 2s forwards; 
+}
+header h1, header p, header button{
+    color: white;
+    transform-origin:top ;
+}
+header h1{
+    font-size: 36px;
+    text-align: center;
+}
+header button{
+    font-size: 16px;
+    background-color:red ;
+    border: 1px solid white;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    padding: 8px 15px;
+    transition: .3s;
+}
+header button:hover{
+    background-color: white;
+    color: black;
+}
+@keyframes down {
+    0%{
+        margin-top:-40px;
+        opacity: 0;
+    }
+    100%{
+        margin-top: 0;
+        opacity: 1;
+    }    
+}
+/*             TUTUP HEADER             */
+
+
+/*            BAGIAN SECTION            */
+section{
+    margin-bottom: 0;
+    height: 450px;
+    background-color: black;
+    text-align: center;
+    position: relative;
+    border-bottom: 1px dashed white;
+}
+.skill-isi{
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 60px 50px 0 50px;
+    position: absolute;
+    left: 0px;
+    top: -30%;
+}
+.skill{
+    background-color: red;
+    border: 1px solid white;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-right-radius: 30px;
+    border-top-left-radius: 30px;
+}
+.skill h2::after{
+    content:"\00BB";
+}
+.skill-ku{
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    border-bottom-right-radius: 30px;
+    border-top-left-radius: 30px;
+}
+.skill-daftar{
+    width: 33%;
+    background-color: white;
+    padding:15px;
+    transition: .3s;
+}
+.skill-daftar:hover{
+    transform: scale(1.3);
+}
+.skill-daftar:nth-child(2){
+    border:1px solid lightgrey;
+}
+.skill-daftar:nth-child(1){
+    border-top-left-radius:30px;
+}
+.skill-daftar:nth-child(3){
+    border-bottom-right-radius: 30px;
+}
+.skill-daftar h4{
+    margin-bottom: 0;
+}
+.main{
+    box-sizing: border-box;
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.tentang{
+    width: 70%;
+    text-align: start;
+}
+.tentang p{
+    font-weight: 600;
+    color: white;
+}
+.tentang p:nth-child(2){
+    font-size: 30px;
+    margin-top: 0;
+    font-family: brush script mt;
+}
+.galeri{
+    position: relative;
+    width: 30%;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    box-sizing: border-box;
+}
+.galeri .isi-galeri{
+    position: absolute;
+    top: 25px;
+    right: 45%;
+    height: 25%;
+    line-height: 50px;
+    padding: 5px;
+    background-color: red;
+    border: 1px solid white;
+    color: white;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.galeri .isi-galeri1{
+    width: 45%;
+    height: 95%;
+    position: absolute;
+    right: 0;
+}
+.galeri .isi-galeri1 img{
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    transition: .5s;
+}
+.galeri .isi-galeri1:hover img{
+    transform: translateY(-70px);
+}
+.galeri .isi-galeri2{
+    width: 45%;
+    height: 50%;
+    position: absolute; 
+    right: 30%;
+    bottom: -20px;
+}
+.galeri .isi-galeri2 img{
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    transition: .5s;
+}
+.galeri .isi-galeri2:hover img{
+    transform: scaleY(1.8);
+}
+/*            TUTUP SECTION             */
+
+
+/*          BAGIAN PORTOFOLIO           */
+.portofolio{
+    position: relative;
+    padding: 40px 50px;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    border-bottom: 1px dashed white;
+}
+.portofolio .judul{
+    padding: 20px;
+    text-align: center;
+    background-color: red;
+    border: 1px solid white;
+    color: white;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+.portofolio .judul h2::before{
+    content: "\00AB";
+}
+.portofolio .gambar{
+    width: 40%;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+}
+.portofolio .gambar a{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+.portofolio .gambar a img{
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    box-shadow: 0 0 0 3px white;
+    transition: .4s;
+}
+.portofolio .gambar a:hover img{
+    box-shadow: 0 0 10px 10px white;
+    transform: scale(1.1);
+}
+/*           TUTUP PORTOFOLIO           */
+
+
+/*             BAGIAN KONTAK            */
+.kontak{
+    background-color: black;
+    height: 400px;
+    padding: 20px 50px;
+}
+.kontak form{
+    width: 40%;
+    margin: 0px auto;
+    padding: 5px 50px 20px 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.kontak .judul-form{
+    text-align: center;
+}
+.kontak .judul-form h2{
+    color: white;
+}
+.form-name, .form-email, .form-message{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-bottom: 0;
+}
+input, textarea{
+    width: 100%;
+    color: white;
+    padding-left: 0;
+    padding-bottom: 5px;
+    font-size: 17px;
+    border: 0;
+    border-bottom: 2px solid white;
+    outline: none;
+    z-index: 1;
+    background: transparent;
+}
+.form-name label, .form-email label, .form-message label{
+    color: white;
+    position: absolute;
+    transition: .5s;
+    bottom: 10px;
+    top: 0;
+}
+input:focus ~ label,
+input:valid ~ label,
+textarea:focus ~ label,
+textarea:valid ~ label{
+    transform: translateY(-15px);
+    font-size: 12px;
+}
+.kontak form span button{
+    font-size: 70%;
+    background-color: red;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: 0;
+    color: white;
+    border: 1px solid white;
+    padding: 10px;
+    transition: .3s;
+}
+.kontak form button:hover{
+    background-color: white;
+    color:black;
+}
+/*             TUTUP KONTAK             */
+
+
+/*            BAGIAN FOOTER             */
+footer{
+    background-color: rgba(50, 47, 47, 0.699);
+    padding: 10px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+footer .copyright p{
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0;  
+    color: white;
+}
+footer .medsos img{
+    border: 1px solid white;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+}
+/*             TUTUP FOOTER             */
